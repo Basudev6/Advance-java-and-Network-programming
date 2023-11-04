@@ -12,7 +12,17 @@ public class Process extends HttpServlet{
         String name = request.getParameter("un");
         
         if(name.equals("ram"))
-        
+        {
+            out.println("You are In.. Congrats..");
+            RequestDispatcher rd = request.getRequestDispatcher("Welcomepage.html");
+            rd.forward(request, response);
+            
+        }
+        else{
+            out.println("Invalid user Name, Opps!!");
+            RequestDispatcher rd = request.getRequestDispatcher("index.html");
+            rd.include(request, response);
+        }
         
     }
 }
